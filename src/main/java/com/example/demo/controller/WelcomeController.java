@@ -13,6 +13,6 @@ public class WelcomeController {
     String greet(@PathVariable(value = "name") String name){
         System.out.println("Reached here...");
         System.out.println("Name "+name);
-        return "Welcome "+name+" ....   ";
+        return "Welcome "+name+" ....";
     }
 }
