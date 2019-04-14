@@ -11,6 +11,12 @@ pipeline {
             '''
         }
 
+        stage('Checkout code') {
+            steps {
+                checkout scm
+            }
+        }
+
         stage ('compile Stage'){
             steps {
                     sh 'mvn clean compile'
