@@ -5,10 +5,14 @@ pipeline {
         }
     stages {
         stage('Display Tool Details') {
-            sh '''
-                sh echo "PATH = ${PATH}"
-                sh echo "M2_HOME=${M2_HOME}"
-            '''
+            steps {
+                step {
+                    sh echo "PATH = ${PATH}"
+                }
+                step {
+                    sh echo "M2_HOME=${M2_HOME}"
+                }
+            }
         }
 
         stage('Checkout code') {
