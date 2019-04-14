@@ -8,13 +8,8 @@ pipeline {
 
         stage('General') {
             steps {
-                step {
-                    echo 'hello'
-                }
-
-                step {
-                    echo 'ABC'
-                }
+                echo 'hello'
+                echo 'ABC'
             }
         }
 
