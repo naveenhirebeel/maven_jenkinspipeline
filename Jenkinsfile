@@ -3,7 +3,20 @@ pipeline {
     tools {
             maven 'maven_3.6.0'
         }
+
     stages {
+
+        stage('General') {
+            steps {
+                step {
+                    echo 'hello'
+                }
+
+                step {
+                    echo 'ABC'
+                }
+            }
+        }
 
         stage('Checkout code') {
             steps {
