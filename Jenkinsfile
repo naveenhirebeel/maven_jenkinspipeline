@@ -4,16 +4,6 @@ pipeline {
             maven 'Maven 3.3.9'
         }
     stages {
-        stage('Display Tool Details') {
-            steps {
-                step {
-                    sh echo "PATH = ${PATH}"
-                }
-                step {
-                    sh echo "M2_HOME=${M2_HOME}"
-                }
-            }
-        }
 
         stage('Checkout code') {
             steps {
