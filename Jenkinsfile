@@ -6,13 +6,6 @@ pipeline {
 
     stages {
 
-        stage('General') {
-            steps {
-                echo 'hello'
-                echo 'ABC'
-            }
-        }
-
         stage('Checkout code') {
             steps {
                 checkout scm
@@ -31,9 +24,15 @@ pipeline {
             }
         }
 
-        stage ('Install Stage'){
+        stage ('Package Stage'){
             steps {
                     sh 'mvn install'
+            }
+        }
+
+        stage ('Sonar Inspection'){
+            steps {
+                    sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar -Dsonar.host.url=https://sonarcloud.io/ -Dsonar.login=40e135c49c5f8de775c9cce4a8c92560c9ac7151'
             }
         }
     }
