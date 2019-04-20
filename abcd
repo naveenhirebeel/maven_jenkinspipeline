@@ -29,5 +29,17 @@ pipeline {
                     sh 'mvn package'
             }
         }
+
+        stage ('Build Docker Image'){
+            steps {
+                    sh 'mvn install dockerfile:build'
+            }
+        }
+
+        stage ('Push Docker Image to Docker Hub'){
+            steps {
+                    sh 'mvn dockerfile:push'
+            }
+        }
     }
 }
